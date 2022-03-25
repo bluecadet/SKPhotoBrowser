@@ -249,7 +249,7 @@ open class SKPhotoBrowser: UIViewController {
             self.hideControlsAfterDelay()
             self.activityViewController = nil
         }
-        if UI_USER_INTERFACE_IDIOM() == .phone {
+        if SKMesurement.isPhone {
             present(activityViewController, animated: true, completion: nil)
         } else {
             activityViewController.modalPresentationStyle = .popover
@@ -491,7 +491,7 @@ internal extension SKPhotoBrowser {
                 }))
             }
             
-            if UI_USER_INTERFACE_IDIOM() == .phone {
+            if SKMesurement.isPhone {
                 present(actionSheetController, animated: true, completion: nil)
             } else {
                 actionSheetController.modalPresentationStyle = .popover
